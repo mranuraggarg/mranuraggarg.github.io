@@ -1,4 +1,4 @@
-# Anurag Garg
+# Research Portfolio
 
 Astrophysics • Machine Learning • Physics Education Research
 
