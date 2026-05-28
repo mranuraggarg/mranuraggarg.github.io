@@ -1,0 +1,981 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anurag Garg | Physics Educator and Researcher</title>
+    <meta
+      name="description"
+      content="Portfolio of Anurag Garg, a physics educator and independent researcher working across astrophysics, machine learning, physics education research, and scientific computing."
+    >
+    <meta name="theme-color" content="#0f2f2f">
+    <meta property="og:title" content="Anurag Garg | Physics Educator and Researcher">
+    <meta
+      property="og:description"
+      content="Teaching, research, simulations, publications, and reproducible scientific workflows in physics and astronomy."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/physics-portfolio-hero.png">
+    <style>
+      :root {
+        --ink: #142020;
+        --muted: #516160;
+        --surface: #fbfaf6;
+        --surface-strong: #f1efe7;
+        --panel: #ffffff;
+        --teal: #0f5c57;
+        --teal-dark: #0f2f2f;
+        --gold: #b17928;
+        --rust: #9d4f36;
+        --line: rgba(20, 32, 32, 0.13);
+        --shadow: 0 18px 44px rgba(20, 32, 32, 0.12);
+        --radius: 8px;
+        --radius-small: 6px;
+        --max: 1160px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--surface);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: var(--teal);
+      }
+
+      .skip-link {
+        position: absolute;
+        left: 1rem;
+        top: -4rem;
+        z-index: 10;
+        border-radius: var(--radius-small);
+        background: var(--ink);
+        color: white;
+        padding: 0.65rem 0.9rem;
+        transition: top 180ms ease;
+      }
+
+      .skip-link:focus {
+        top: 1rem;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        border-bottom: 1px solid var(--line);
+        background: rgba(251, 250, 246, 0.92);
+        backdrop-filter: blur(16px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.25rem;
+        width: min(100% - 2rem, var(--max));
+        margin: 0 auto;
+        min-height: 72px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        max-width: 100%;
+        min-width: 0;
+      }
+
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(15, 92, 87, 0.22);
+        border-radius: 50%;
+        background: #ffffff;
+        color: var(--teal-dark);
+        font-weight: 800;
+        letter-spacing: 0;
+      }
+
+      .brand-text {
+        display: grid;
+        min-width: 0;
+        line-height: 1.15;
+      }
+
+      .brand-name {
+        font-weight: 800;
+      }
+
+      .brand-role {
+        color: var(--muted);
+        font-size: 0.86rem;
+      }
+
+      .brand-name,
+      .brand-role {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: clamp(0.7rem, 2vw, 1.6rem);
+        color: #344140;
+        font-size: 0.94rem;
+        font-weight: 650;
+        white-space: nowrap;
+      }
+
+      .nav-links a {
+        padding: 0.35rem 0;
+      }
+
+      .hero {
+        position: relative;
+        isolation: isolate;
+        min-height: min(680px, 76svh);
+        overflow: hidden;
+        color: #ffffff;
+      }
+
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(6, 16, 16, 0.88) 0%,
+            rgba(11, 30, 29, 0.76) 36%,
+            rgba(10, 23, 23, 0.36) 66%,
+            rgba(10, 23, 23, 0.28) 100%
+          );
+        content: "";
+      }
+
+      .hero-inner {
+        display: grid;
+        align-content: center;
+        width: min(100% - 2rem, var(--max));
+        margin: 0 auto;
+        min-height: min(680px, 76svh);
+        padding: clamp(3.5rem, 7vw, 5.25rem) 0;
+      }
+
+      .eyebrow {
+        margin: 0 0 1rem;
+        color: #f4d19b;
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin-bottom: 1.15rem;
+        font-size: clamp(4rem, 9.5vw, 8.5rem);
+        line-height: 0.92;
+        letter-spacing: 0;
+      }
+
+      .hero-copy {
+        max-width: 660px;
+        margin-bottom: 2rem;
+        color: rgba(255, 255, 255, 0.88);
+        font-size: clamp(1.07rem, 2.2vw, 1.35rem);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        border: 1px solid transparent;
+        border-radius: var(--radius-small);
+        padding: 0.72rem 1rem;
+        font-weight: 800;
+        line-height: 1.1;
+      }
+
+      .button-primary {
+        background: #ffffff;
+        color: var(--teal-dark);
+      }
+
+      .button-secondary {
+        border-color: rgba(255, 255, 255, 0.46);
+        color: #ffffff;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      main {
+        overflow: clip;
+      }
+
+      .section {
+        padding: clamp(4rem, 7vw, 6.5rem) 0;
+      }
+
+      .section-muted {
+        background: var(--surface-strong);
+      }
+
+      .wrap {
+        width: min(100% - 2rem, var(--max));
+        margin: 0 auto;
+      }
+
+      .section-heading {
+        display: grid;
+        gap: 0.55rem;
+        max-width: 760px;
+        margin-bottom: clamp(2rem, 4vw, 3rem);
+      }
+
+      .section-heading h2 {
+        margin-bottom: 0;
+        font-size: clamp(2rem, 4vw, 3.4rem);
+        line-height: 1.05;
+        letter-spacing: 0;
+      }
+
+      .section-heading p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 1.06rem;
+      }
+
+      .intro-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.82fr);
+        gap: clamp(2rem, 6vw, 5rem);
+        align-items: start;
+      }
+
+      .lead {
+        color: #253231;
+        font-size: clamp(1.24rem, 2.6vw, 1.78rem);
+        line-height: 1.38;
+      }
+
+      .profile-list {
+        display: grid;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .profile-list li {
+        border-left: 4px solid var(--gold);
+        padding-left: 1rem;
+      }
+
+      .profile-list strong {
+        display: block;
+        margin-bottom: 0.1rem;
+      }
+
+      .profile-list span {
+        color: var(--muted);
+      }
+
+      .focus-grid,
+      .project-grid,
+      .teaching-grid,
+      .link-grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .focus-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .project-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .teaching-grid {
+        grid-template-columns: 0.92fr 1.08fr;
+        align-items: stretch;
+      }
+
+      .link-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .card,
+      .feature-panel,
+      .publication-panel,
+      .contact-panel {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        padding: clamp(1.2rem, 2.6vw, 1.65rem);
+      }
+
+      .card h3 {
+        margin-bottom: 0.55rem;
+        font-size: 1.2rem;
+        line-height: 1.25;
+      }
+
+      .card p {
+        color: var(--muted);
+      }
+
+      .card p:last-child {
+        margin-bottom: 0;
+      }
+
+      .card-accent {
+        width: 42px;
+        height: 4px;
+        margin-bottom: 1rem;
+        border-radius: 999px;
+        background: var(--teal);
+      }
+
+      .card:nth-child(2) .card-accent,
+      .project-card:nth-child(2) .card-accent {
+        background: var(--gold);
+      }
+
+      .card:nth-child(3) .card-accent,
+      .project-card:nth-child(3) .card-accent {
+        background: var(--rust);
+      }
+
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin-top: auto;
+        padding-top: 0.9rem;
+      }
+
+      .tag {
+        border: 1px solid rgba(15, 92, 87, 0.22);
+        border-radius: 999px;
+        background: rgba(15, 92, 87, 0.07);
+        color: var(--teal-dark);
+        padding: 0.22rem 0.55rem;
+        font-size: 0.8rem;
+        font-weight: 750;
+      }
+
+      .feature-panel {
+        display: grid;
+        align-content: end;
+        min-height: 420px;
+        padding: clamp(1.25rem, 3vw, 2rem);
+        background:
+          linear-gradient(rgba(15, 47, 47, 0.72), rgba(15, 47, 47, 0.72)),
+          url("assets/physics-portfolio-hero.png") center / cover;
+        color: #ffffff;
+      }
+
+      .feature-panel h2 {
+        max-width: 480px;
+        margin-bottom: 0.65rem;
+        font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+        line-height: 1.07;
+      }
+
+      .feature-panel p {
+        max-width: 520px;
+        margin-bottom: 0;
+        color: rgba(255, 255, 255, 0.84);
+      }
+
+      .teaching-list {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .teaching-item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1rem;
+        align-items: start;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: #ffffff;
+        padding: 1.1rem;
+      }
+
+      .teaching-number {
+        display: grid;
+        place-items: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        background: var(--teal-dark);
+        color: #ffffff;
+        font-weight: 850;
+      }
+
+      .teaching-item h3 {
+        margin-bottom: 0.25rem;
+        font-size: 1.08rem;
+      }
+
+      .teaching-item p {
+        margin-bottom: 0;
+        color: var(--muted);
+      }
+
+      .publication-panel,
+      .contact-panel {
+        padding: clamp(1.4rem, 4vw, 2.4rem);
+      }
+
+      .publication-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.6fr);
+        gap: clamp(1.5rem, 4vw, 3rem);
+        align-items: center;
+      }
+
+      .publication-panel h2,
+      .contact-panel h2 {
+        margin-bottom: 0.7rem;
+        font-size: clamp(1.8rem, 3.6vw, 3rem);
+        line-height: 1.1;
+      }
+
+      .publication-panel p,
+      .contact-panel p {
+        color: var(--muted);
+      }
+
+      .publication-actions,
+      .contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+      }
+
+      .outline-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        border: 1px solid rgba(15, 92, 87, 0.26);
+        border-radius: var(--radius-small);
+        padding: 0.55rem 0.82rem;
+        color: var(--teal-dark);
+        font-weight: 800;
+      }
+
+      .outline-link:hover {
+        border-color: var(--teal);
+        background: rgba(15, 92, 87, 0.07);
+      }
+
+      .profile-link {
+        display: grid;
+        gap: 0.25rem;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: #ffffff;
+        padding: 1.1rem;
+      }
+
+      .profile-link strong {
+        font-size: 1rem;
+      }
+
+      .profile-link span {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .contact-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 1.5rem;
+        align-items: center;
+        background: var(--teal-dark);
+        color: #ffffff;
+      }
+
+      .contact-panel p {
+        margin-bottom: 0;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .contact-actions .outline-link {
+        border-color: rgba(255, 255, 255, 0.32);
+        color: #ffffff;
+      }
+
+      .contact-actions .outline-link:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+      }
+
+      .site-footer {
+        border-top: 1px solid var(--line);
+        padding: 1.5rem 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        width: min(100% - 2rem, var(--max));
+        margin: 0 auto;
+      }
+
+      @media (max-width: 920px) {
+        .nav {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 0.85rem 0;
+        }
+
+        .nav-links {
+          width: 100%;
+          justify-content: flex-start;
+          overflow-x: auto;
+          padding-bottom: 0.15rem;
+        }
+
+        .intro-grid,
+        .teaching-grid,
+        .publication-panel,
+        .contact-panel {
+          grid-template-columns: 1fr;
+        }
+
+        .focus-grid,
+        .project-grid,
+        .link-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 680px) {
+        .hero {
+          min-height: auto;
+        }
+
+        .hero::before {
+          background: rgba(6, 16, 16, 0.74);
+        }
+
+        .hero-inner {
+          min-height: auto;
+          padding: 3.1rem 0 3rem;
+        }
+
+        h1 {
+          font-size: clamp(3.25rem, 16vw, 4.1rem);
+        }
+
+        .hero-copy {
+          margin-bottom: 1.35rem;
+          font-size: 1rem;
+        }
+
+        .hero-actions,
+        .publication-actions,
+        .contact-actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .button,
+        .outline-link {
+          width: 100%;
+        }
+
+        .focus-grid,
+        .project-grid,
+        .link-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .feature-panel {
+          min-height: 360px;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Anurag Garg homepage">
+          <span class="brand-mark">AG</span>
+          <span class="brand-text">
+            <span class="brand-name">Anurag Garg</span>
+            <span class="brand-role">Physics educator & researcher</span>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="#research">Research</a>
+          <a href="#projects">Projects</a>
+          <a href="#teaching">Teaching</a>
+          <a href="#publications">Publications</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <img
+          class="hero-media"
+          src="assets/physics-portfolio-hero.png"
+          alt="Physics research workspace with astronomy diagrams, a telescope, and scientific computing displays"
+          fetchpriority="high"
+        >
+        <div class="hero-inner">
+          <p class="eyebrow">Physics Education &middot; Astrophysics &middot; Scientific Computing</p>
+          <h1 id="hero-title">Anurag Garg</h1>
+          <p class="hero-copy">
+            Physics educator and independent researcher working across astrophysics,
+            machine learning, physics education research, and open science.
+          </p>
+          <div class="hero-actions" aria-label="Featured navigation">
+            <a class="button button-primary" href="#projects">View Featured Work</a>
+            <a class="button button-secondary" href="#publications">Research Profiles</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="about-title">
+        <div class="wrap intro-grid">
+          <div>
+            <p class="eyebrow" id="about-title">About</p>
+            <p class="lead">
+              An educator-researcher portfolio spanning classroom practice, astronomy
+              learning, machine learning for supernova classification, and reproducible
+              computational methods.
+            </p>
+          </div>
+          <ul class="profile-list" aria-label="Professional focus summary">
+            <li>
+              <strong>Teaching</strong>
+              <span>Physics and astronomy concepts made visible through experiments, simulations, and diagnostic assessment.</span>
+            </li>
+            <li>
+              <strong>Research</strong>
+              <span>Projects connecting astrophysical data, educational evidence, and transparent computational workflows.</span>
+            </li>
+            <li>
+              <strong>Portfolio</strong>
+              <span>A foundation for publications, project pages, teaching resources, datasets, and code repositories.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="research" aria-labelledby="research-title">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="eyebrow">Research Areas</p>
+            <h2 id="research-title">Work at the intersection of physics, data, and learning.</h2>
+            <p>
+              The portfolio is organized around research themes that can expand into
+              dedicated pages for papers, datasets, simulations, notebooks, and classroom material.
+            </p>
+          </div>
+
+          <div class="focus-grid">
+            <article class="card">
+              <span class="card-accent" aria-hidden="true"></span>
+              <h3>Astrophysics and Classification</h3>
+              <p>
+                Computational approaches to photometric supernova classification,
+                model evaluation, and transparent scientific workflows.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card-accent" aria-hidden="true"></span>
+              <h3>Physics Education Research</h3>
+              <p>
+                Studies of astronomy misconceptions, pre-post assessment, multimedia
+                interventions, and evidence-informed teaching design.
+              </p>
+            </article>
+            <article class="card">
+              <span class="card-accent" aria-hidden="true"></span>
+              <h3>Scientific Computing</h3>
+              <p>
+                Open notebooks, simulations, reproducible pipelines, and practical
+                tools that connect classroom questions with research methods.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="eyebrow">Featured Projects</p>
+            <h2 id="projects-title">A portfolio structure ready for deeper project pages.</h2>
+            <p>
+              These featured entries provide a clear starting point for future case
+              studies, supporting files, code releases, and publication links.
+            </p>
+          </div>
+
+          <div class="project-grid">
+            <article class="card project-card">
+              <span class="card-accent" aria-hidden="true"></span>
+              <h3>Supernova Classification using Machine Learning</h3>
+              <p>
+                Improving photometric supernova classification workflows through
+                feature engineering, model comparison, optimization, and reproducibility.
+              </p>
+              <div class="tag-list" aria-label="Project tags">
+                <span class="tag">Astrophysics</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Open Workflow</span>
+              </div>
+            </article>
+
+            <article class="card project-card">
+              <span class="card-accent" aria-hidden="true"></span>
+              <h3>Astronomy Misconception Study</h3>
+              <p>
+                Investigating student misconceptions in astronomy with diagnostic
+                assessment, pre-post analysis, and multimedia learning interventions.
+              </p>
+              <div class="tag-list" aria-label="Project tags">
+                <span class="tag">Education Research</span>
+                <span class="tag">Assessment</span>
+                <span class="tag">Astronomy</span>
+              </div>
+            </article>
+
+            <article class="card project-card">
+              <span class="card-accent" aria-hidden="true"></span>
+              <h3>Interactive Physics Simulations</h3>
+              <p>
+                Browser-based simulations and lab activities designed to make mechanics,
+                waves, astronomy, and data analysis more observable for learners.
+              </p>
+              <div class="tag-list" aria-label="Project tags">
+                <span class="tag">Teaching Tools</span>
+                <span class="tag">Simulations</span>
+                <span class="tag">Physics Labs</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="teaching" aria-labelledby="teaching-title">
+        <div class="wrap teaching-grid">
+          <div class="feature-panel">
+            <h2 id="teaching-title">Teaching that connects models, measurement, and meaning.</h2>
+            <p>
+              Learning resources can grow here into lesson collections, demonstration notes,
+              simulation guides, classroom studies, and assessment instruments.
+            </p>
+          </div>
+
+          <div class="teaching-list" aria-label="Teaching focus areas">
+            <article class="teaching-item">
+              <span class="teaching-number">1</span>
+              <div>
+                <h3>Conceptual clarity</h3>
+                <p>Explanations and activities focused on the physics behind the formulas.</p>
+              </div>
+            </article>
+            <article class="teaching-item">
+              <span class="teaching-number">2</span>
+              <div>
+                <h3>Evidence from learners</h3>
+                <p>Diagnostic questions, pre-post analysis, and misconception-aware instruction.</p>
+              </div>
+            </article>
+            <article class="teaching-item">
+              <span class="teaching-number">3</span>
+              <div>
+                <h3>Computational practice</h3>
+                <p>Simulations, notebooks, and datasets that help students reason with models.</p>
+              </div>
+            </article>
+            <article class="teaching-item">
+              <span class="teaching-number">4</span>
+              <div>
+                <h3>Reusable resources</h3>
+                <p>Materials designed for future expansion into downloadable teaching collections.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="publications" aria-labelledby="publications-title">
+        <div class="wrap">
+          <div class="publication-panel">
+            <div>
+              <p class="eyebrow">Publications and Profiles</p>
+              <h2 id="publications-title">Research links in one place.</h2>
+              <p>
+                Add journal articles, preprints, DOI records, Zenodo releases, datasets,
+                and repository links here as the portfolio grows.
+              </p>
+            </div>
+            <div class="publication-actions" aria-label="Research profile links">
+              <a class="outline-link" href="http://arxiv.org/a/garg_a_4">arXiv Author Page</a>
+              <a class="outline-link" href="https://orcid.org/0000-0001-9448-3960">ORCID Record</a>
+              <a class="outline-link" href="https://github.com/mranuraggarg">GitHub Profile</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" aria-labelledby="resources-title">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="eyebrow">Open Science</p>
+            <h2 id="resources-title">Built for transparent, reusable work.</h2>
+            <p>
+              Future sections can present notebooks, data dictionaries, reproducible
+              environments, classroom resources, talks, and project documentation.
+            </p>
+          </div>
+
+          <div class="link-grid">
+            <a class="profile-link" href="https://github.com/mranuraggarg">
+              <strong>Code and Notebooks</strong>
+              <span>Versioned research and teaching materials</span>
+            </a>
+            <a class="profile-link" href="http://arxiv.org/a/garg_a_4">
+              <strong>Preprints</strong>
+              <span>Research manuscripts and public records</span>
+            </a>
+            <a class="profile-link" href="https://orcid.org/0000-0001-9448-3960">
+              <strong>Research Identity</strong>
+              <span>Persistent author identifier and profile</span>
+            </a>
+            <a class="profile-link" href="#projects">
+              <strong>Project Archive</strong>
+              <span>Featured work ready for expansion</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="wrap">
+          <div class="contact-panel">
+            <div>
+              <p class="eyebrow">Connect</p>
+              <h2 id="contact-title">For research, teaching resources, and collaboration.</h2>
+              <p>
+                This landing page can expand into a full academic portfolio with detailed
+                project pages, publication records, teaching material, and research updates.
+              </p>
+            </div>
+            <div class="contact-actions" aria-label="Contact links">
+              <a class="outline-link" href="https://github.com/mranuraggarg">GitHub</a>
+              <a class="outline-link" href="https://orcid.org/0000-0001-9448-3960">ORCID</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>&copy; 2026 Anurag Garg</span>
+        <span>Physics education, astrophysics, and open scientific computing</span>
+      </div>
+    </footer>
+  </body>
+</html>
