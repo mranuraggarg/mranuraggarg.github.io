@@ -1,14 +1,12 @@
-
-
 # Anurag Garg
 
-Physics educator and independent researcher working in astrophysics, machine learning, and physics education research.
+Astrophysics • Machine Learning • Physics Education Research
 
 ---
 
 ## About
 
-This website highlights research projects, educational resources, simulations, and reproducible scientific workflows developed across astrophysics, computational science, and physics education.
+This website highlights research projects, educational resources, simulations, and reproducible scientific workflows across astrophysics, computational science, and physics education.
 
 ---
 
@@ -58,6 +56,6 @@ This work emphasizes reproducibility, transparent methodology, educational acces
 
 ## Links
 
-- GitHub Profile: https://github.com/mranuraggarg
-- arXiv: http://arxiv.org/a/garg_a_4
-- ORCID: https://orcid.org/0000-0001-9448-3960
+- [GitHub](https://github.com/mranuraggarg)
+- [arXiv Author Page](http://arxiv.org/a/garg_a_4)
+- [ORCID](https://orcid.org/0000-0001-9448-3960)
